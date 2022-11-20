@@ -17,5 +17,5 @@ class DirectorsView(Resource):
 class DirectorView(Resource):
 	def get(self, did):
 		d_object = director_service.get_one(did)
-		result = DirectorSchema.dump(d_object)
+		result = DirectorSchema().dump(d_object)
 		return result, 200

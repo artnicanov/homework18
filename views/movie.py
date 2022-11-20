@@ -25,14 +25,14 @@ class MoviesView(Resource):
 
 	def post(self):
 		request_json = request.json
-		movie = movie_service.create(request_json)
+		movie_service.create(request_json)
 		return "", 201
 
 @movie_ns.route('/<int:mid>')
 class MovieView(Resource):
 	def get(self, mid):
-		object = movie_service.get_one(mid)
-		result = MovieSchema.dump(object)
+		m_object = movie_service.get_one(mid)
+		result = MovieSchema().dump(m_object)
 		return result, 200
 
 	def put(self, mid):

@@ -21,6 +21,7 @@ def create_app(config_obj):
 	app = Flask(__name__)
 	app.config.from_object(config_obj)
 	register_extentions(app)
+	return app
 
 app = create_app(Config())
 

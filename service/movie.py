@@ -30,4 +30,4 @@ class MovieService:
 		return self.dao
 
 	def delete(self, mid):
-		self.dao.delete()
+		self.dao.delete(mid)

@@ -17,5 +17,5 @@ class GenresView(Resource):
 class GenreView(Resource):
 	def get(self, gid):
 		g_object = genre_service.get_one(gid)
-		result = GenreShema.dump(g_object)
+		result = GenreShema().dump(g_object)
 		return result, 200
